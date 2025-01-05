@@ -1,0 +1,15 @@
+name: Docker image CI for GHCR
+
+on:
+  push:
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push the image
+        run: |
+          docker login --username harshadM92 --password ${{secrets.GH_P_A_T}} ghcr.io
+          docker build . --tag ghcr.io/harshadm92/angulardockerizedapp:latest
+          docker push ghcr.io/harshadm92/angulardockerizedapp:latest
