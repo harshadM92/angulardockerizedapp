@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: angular-app
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true  # Enables auto-deploy for the main branch
