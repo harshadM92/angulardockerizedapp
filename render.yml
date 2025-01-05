@@ -3,5 +3,5 @@ services:
     name: angular-app
     env: docker
     plan: free
-    dockerfilePath: ./Dockerfile
+    dockerImage: ghcr.io/harshadm92/angulardockerizedapp:latest
     autoDeploy: true  # Enables auto-deploy for the main branch
